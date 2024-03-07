@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sitema de País</h1>
+    Digite sue País de origem: <input type="text" name="pais" id="pais"> 
+    <input type="button" value="Verificar" onclick="paisorigem()">
+    <div id="resultado">
+
+    </div>
+    <script>
+      
+        function paisorigem(){
+        var pais = document.getElementById('pais').value
+        var resultado = document.querySelector('div#resultado')
+        resultado.innerHTML = `Seu país de origem é: ${pais}`
+            if(pais == 'Brasil'){
+                resultado.innerHTML += ` <p> Você é Brasileiro ^^</p>`
+            }else{
+            resultado.innerHTML += `<p>Você não é Brasileiro. Você é de/o ${pais}</p>`
+        }
+        }
+    </script>
+</body>
+</html>

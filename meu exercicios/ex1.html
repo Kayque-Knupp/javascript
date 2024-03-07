@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(90, 90, 90);
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20% ; 
+        }
+        form{
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        #botao{
+            margin: 0 35%;
+        }
+    </style>
+</head>
+<body>
+    <div id="form">
+        <form action="GET">
+            <p>Digite seu Nome: <input type= "text" name="nomealuno" id="nomealuno"> </p>
+            <p>Digite sua nota 1: <input type="number" name="nota1" id="nota1" max="10"> </p>
+            <p>Digite sua nota 2: <input type="number" name="nota2" id="nota2"> </p>
+            <input id="botao" type="button" value="Verificar" onclick="resultado()">
+           
+        </form>
+        <div id="saida">
+            Sua média e sua Situação é:
+        </div>
+    </div>
+
+    <script>
+        function resultado(){
+            var nomealuno = document.getElementById('nomealuno').value
+            var n1 = Number(document.getElementById('nota1').value)
+            var n2 = Number(document.getElementById('nota2').value)
+             var resultado = document.getElementById('saida')
+          //  var nota1 = Number(n1.value)
+            //var nota2 = Number(n2.value)
+            var media = (n1 + n2)/2
+            var situacao
+            if(media>=7){
+                situacao = 'Aprovado'
+            }else{
+                situacao= 'Reprovado'
+            }
+            resultado.innerHTML = `O aluno ${nomealuno} teve a média ${media} e sua Situação é ${situacao}`
+        }
+    </script>
+</body>
+</html>
